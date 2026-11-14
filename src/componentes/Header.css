@@ -1,0 +1,233 @@
+/* Header e navegação */
+
+/* position: sticky: o header acompanha a rolagem e gruda no topo */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.site-header.scrolled {
+  background-color: rgba(4, 15, 23, 0.88);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 84px;
+}
+.nav-logo img {
+  width: auto;
+  height: 34px;
+}
+.nav-logo .nav-pkzlab {
+  height: 40px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+.nav-links a {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d9e1e8;
+  transition: color 0.2s ease;
+}
+/* a classe "active" é colocada pelo NavLink na página atual */
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent);
+}
+
+/* Submenu "Agendar": o li é a referência (relative) e a lista fica em absolute */
+.has-dropdown {
+  position: relative;
+}
+.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: 0;
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #d9e1e8;
+  transition: color 0.2s ease;
+}
+.dropdown-toggle .chev {
+  width: 6px;
+  height: 6px;
+  margin-top: -4px;
+  transform: rotate(135deg);
+  transition: transform 0.2s ease;
+}
+.dropdown-toggle:hover,
+.dropdown-toggle.active,
+.has-dropdown.open .dropdown-toggle {
+  color: var(--accent);
+}
+.has-dropdown.open .dropdown-toggle .chev {
+  margin-top: 4px;
+  transform: rotate(-45deg);
+}
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: -18px;
+  min-width: 190px;
+  margin-top: 16px;
+  padding: 8px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.6);
+}
+/* faixa invisível entre o botão e o menu, para o hover não "cair" no espaço vazio */
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 0;
+  right: 0;
+  height: 18px;
+}
+.has-dropdown.open .dropdown,
+.has-dropdown:focus-within .dropdown {
+  display: block;
+}
+.dropdown a {
+  display: block;
+  padding: 12px 14px;
+  border-radius: 10px;
+  letter-spacing: 0.2em;
+}
+.dropdown a:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Botão "hambúrguer" (só aparece no celular) */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+}
+.nav-toggle span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background-color: var(--text);
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+.nav-toggle span:nth-child(1) {
+  top: 15px;
+}
+.nav-toggle span:nth-child(2) {
+  top: 21px;
+}
+.nav-toggle span:nth-child(3) {
+  top: 27px;
+}
+/* a classe "nav-open" fica no próprio <header> quando o menu está aberto */
+.nav-open .nav-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.nav-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.nav-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Telas grandes: o submenu também abre ao passar o mouse */
+@media (min-width: 768px) {
+  .has-dropdown:hover .dropdown {
+    display: block;
+  }
+}
+
+/* Phablets e tablets pequenos (até 767px) */
+@media (max-width: 767px) {
+  /* Menu mobile: escondido (display: none) até o botão "hambúrguer" ser clicado */
+  .nav-toggle {
+    display: block;
+    order: -1; /* o botão "hambúrguer" vem antes da logo */
+    margin-left: -10px; /* alinha as barrinhas com a margem do conteúdo */
+  }
+  /* no celular, botão e logo ficam juntos à esquerda */
+  .nav {
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 84px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 24px 28px;
+    background-color: rgba(4, 15, 23, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-open .nav-links {
+    display: flex;
+  }
+  .nav-links a {
+    display: block;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  /* "Agendar" vira um título com as duas opções logo abaixo */
+  .dropdown-toggle {
+    width: 100%;
+    padding: 16px 0 6px;
+    color: var(--muted);
+  }
+  .dropdown-toggle .chev {
+    display: none;
+  }
+  .dropdown,
+  .has-dropdown.open .dropdown {
+    display: block;
+    position: static;
+    min-width: 0;
+    margin-top: 0;
+    padding: 0 0 0 18px;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+  .dropdown::before {
+    display: none;
+  }
+  .dropdown a {
+    padding: 14px 0;
+    border-radius: 0;
+  }
+  .dropdown a:hover {
+    background: none;
+  }
+}

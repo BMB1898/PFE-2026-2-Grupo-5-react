@@ -2,7 +2,9 @@ import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import useReveal from "./useReveal.js";
-
+import Header from "./componentes/Header.jsx";
+import Footer from "./componentes/Footer.jsx";
+import Planos from "./pages/Planos.jsx";
 import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 // O App é o "molde" de todas as páginas: o Header e o Footer aparecem
@@ -27,11 +29,14 @@ export default function App() {
 
   return (
     <>
+    <Header />
+    <Route path="/planos" element={<Planos />} />
       <Routes>
         {/* path="*": qualquer endereço que não existe.
             Enquanto a Home não for adicionada, o "/" também cai aqui. */}
         <Route path="*" element={<NaoEncontrada />} />
       </Routes>
+      <Footer />
     </>
   );
 }
