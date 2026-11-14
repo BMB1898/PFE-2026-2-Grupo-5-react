@@ -29,9 +29,9 @@ export default function App() {
 
   return (
     <>
-    <Header />
-    <Route path="/planos" element={<Planos />} />
+      <Header />
       <Routes>
+        <Route path="/planos" element={<Planos />} />
         {/* path="*": qualquer endereço que não existe.
             Enquanto a Home não for adicionada, o "/" também cai aqui. */}
         <Route path="*" element={<NaoEncontrada />} />
