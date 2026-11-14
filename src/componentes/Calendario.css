@@ -1,0 +1,228 @@
+/* Calendário de agendamento */
+.calendar {
+  padding: 28px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.cal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+.cal-head h2 {
+  font-size: 1.875rem;
+}
+.cal-nav {
+  display: flex;
+  gap: 12px;
+}
+.cal-nav button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: #050d14;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--accent);
+}
+.cal-nav button:hover {
+  border-color: var(--accent);
+}
+.cal-nav button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+.cal-nav .prev .chev {
+  margin-left: 3px;
+  transform: rotate(-135deg);
+}
+.cal-nav .next .chev {
+  margin-right: 3px;
+}
+
+/* Tabela do mês: th = dias da semana, td = dias */
+.cal-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+}
+.cal-table th {
+  width: 14.28%; /* 7 colunas iguais: 100% / 7 */
+  padding-bottom: 6px;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: #c8d0d7;
+}
+.cal-day {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: #08121a;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  font-size: 0.9375rem;
+  color: var(--text);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+.cal-day:hover {
+  border-color: var(--accent);
+}
+/* Dias sem vaga: sem fundo e com texto cinza, ainda legível */
+.cal-day.muted {
+  background-color: transparent;
+  color: var(--muted-2);
+}
+.cal-day:disabled {
+  background-color: transparent;
+  border-color: var(--border);
+  color: var(--muted-2);
+  cursor: not-allowed;
+}
+.cal-day.today {
+  border-color: rgba(0, 180, 245, 0.4);
+}
+.cal-day.selected {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 700;
+  color: var(--accent-ink);
+}
+
+/* Resumo do dia escolhido */
+.cal-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px 0 26px;
+  padding: 14px 18px;
+  background-color: #071c29;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+}
+.cal-selected p {
+  font-size: 0.875rem;
+  color: #c3ccd4;
+}
+.cal-selected .cal-selected-day {
+  font-family: var(--font-display);
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.cal-selected .pill {
+  padding: 8px 14px;
+  background-color: #03090e;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Horários */
+.slots-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.slots-head h3 {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--accent);
+}
+.slots-head span {
+  font-size: 0.875rem;
+  white-space: nowrap;
+  color: var(--muted);
+}
+.slots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+/* Cada horário é um <label> com um input radio dentro (pareamento por encapsulamento).
+   O label é a referência (relative) e o radio, invisível, cobre o label inteiro (absolute). */
+.slot {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.slot input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.slot span {
+  display: block;
+  padding: 14px;
+  text-align: center;
+  background-color: #050d14;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9375rem;
+  color: var(--text);
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+/* combinador de irmão adjacente (+): o span logo depois do radio */
+.slot:hover span,
+.slot input:focus-visible + span {
+  border-color: var(--accent);
+}
+.slot input:checked + span {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  font-weight: 600;
+  color: var(--accent-ink);
+}
+.slots-empty {
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 600px) {
+  .calendar {
+    padding: 24px;
+  }
+  .cal-head h2 {
+    font-size: 1.5rem;
+  }
+  .cal-nav button {
+    width: 38px;
+    height: 38px;
+  }
+  .cal-table {
+    border-spacing: 4px;
+  }
+  .cal-day {
+    border-radius: 10px;
+    font-size: 0.875rem;
+  }
+  .cal-selected .cal-selected-day {
+    font-size: 1.125rem;
+  }
+  .slots {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slots-head h3 {
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+  }
+}

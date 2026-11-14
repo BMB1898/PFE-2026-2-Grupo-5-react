@@ -6,6 +6,7 @@ import Header from "./componentes/Header.jsx";
 import Footer from "./componentes/Footer.jsx";
 import Planos from "./pages/Planos.jsx";
 import Home from "./pages/Home.jsx";
+import Agendar from "./pages/Agendar.jsx";
 import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 // O App é o "molde" de todas as páginas: o Header e o Footer aparecem
@@ -32,6 +33,14 @@ export default function App() {
     <>
       <Header />
       <Routes>
+        <Route
+          path="/agendar-one-to-one"
+          element={<Agendar key="One-to-One" marca="One-to-One" />}
+        />
+        <Route
+          path="/agendar-pkz"
+          element={<Agendar key="PKZ" marca="PKZ" />}
+        />
         <Route path="/" element={<Home />} />
         <Route path="/planos" element={<Planos />} />
         {/* path="*": qualquer endereço que não existe. */}
