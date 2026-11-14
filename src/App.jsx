@@ -5,6 +5,7 @@ import useReveal from "./useReveal.js";
 import Header from "./componentes/Header.jsx";
 import Footer from "./componentes/Footer.jsx";
 import Planos from "./pages/Planos.jsx";
+import Home from "./pages/Home.jsx";
 import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 // O App é o "molde" de todas as páginas: o Header e o Footer aparecem
@@ -31,9 +32,9 @@ export default function App() {
     <>
       <Header />
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/planos" element={<Planos />} />
-        {/* path="*": qualquer endereço que não existe.
-            Enquanto a Home não for adicionada, o "/" também cai aqui. */}
+        {/* path="*": qualquer endereço que não existe. */}
         <Route path="*" element={<NaoEncontrada />} />
       </Routes>
       <Footer />
