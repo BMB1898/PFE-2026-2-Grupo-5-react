@@ -9,6 +9,7 @@ import Home from "./pages/Home.jsx";
 import Agendar from "./pages/Agendar.jsx";
 import Pkz from "./pages/Pkz.jsx";
 import Fisioterapia from "./pages/Fisioterapia.jsx";
+ import OneToOne from "./pages/OneToOne.jsx";
 import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 // O App é o "molde" de todas as páginas: o Header e o Footer aparecem
@@ -35,6 +36,7 @@ export default function App() {
     <>
       <Header />
       <Routes>
+      
         <Route path="/pkz" element={<Pkz />} />
         <Route path="/fisioterapia" element={<Fisioterapia />} />
         <Route
