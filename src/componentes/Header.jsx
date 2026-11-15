@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 import LogoOneToOne from "./LogoOneToOne.jsx";
-import logoPlaymakerz from "../assets/img/logo-playmakerz.png";
-import logoPkzLab from "../assets/img/logo-pkz-lab.png";
+import logoPlaymakerz from "../imagem/logo-playmakerz.png";
+import logoPkzLab from "../imagem/logo-pkz-lab.png";
 import "./Header.css";
 
 // Cabeçalho: logo + menu de navegação.

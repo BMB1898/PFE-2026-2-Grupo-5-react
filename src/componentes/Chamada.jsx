@@ -1,5 +1,5 @@
-import setas from "../assets/img/chevrons.svg";
-import foguete from "../assets/img/rocket.svg";
+import setas from "../imagem/chevrons.svg";
+import foguete from "../imagem/rocket.svg";
 import "./Chamada.css";
 
 // Chamada final (CTA) no fim das páginas das marcas.

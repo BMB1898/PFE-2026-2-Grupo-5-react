@@ -6,16 +6,16 @@ import MosaicoFotos from "../componentes/MosaicoFotos.jsx";
 import Passos from "../componentes/Passos.jsx";
 import LogoOneToOne from "../componentes/LogoOneToOne.jsx";
 
-import fotoHero from "../assets/img/hero-home.jpg";
-import fotoAcademia from "../assets/img/home-academia.jpg";
-import fotoFutebol1 from "../assets/img/home-futebol-1.jpg";
-import fotoFutebol2 from "../assets/img/home-futebol-2.jpg";
-import fotoAcademia2 from "../assets/img/home-academia-2.jpg";
-import fotoEduardo from "../assets/img/prof-eduardo.jpg";
-import fotoPkz4 from "../assets/img/pkz-4.jpg";
-import fotoFisioterapia from "../assets/img/home-fisioterapia.jpg";
-import logoPlaymakerz from "../assets/img/logo-playmakerz.png";
-import fogueteBranco from "../assets/img/rocket-white.svg";
+import fotoHero from "../imagem/hero-home.jpg";
+import fotoAcademia from "../imagem/home-academia.jpg";
+import fotoFutebol1 from "../imagem/home-futebol-1.jpg";
+import fotoFutebol2 from "../imagem/home-futebol-2.jpg";
+import fotoAcademia2 from "../imagem/home-academia-2.jpg";
+import fotoEduardo from "../imagem/prof-eduardo.jpg";
+import fotoPkz4 from "../imagem/pkz-4.jpg";
+import fotoFisioterapia from "../imagem/home-fisioterapia.jpg";
+import logoPlaymakerz from "../imagem/logo-playmakerz.png";
+import fogueteBranco from "../imagem/rocket-white.svg";
 import "./Home.css";
 
 // Os conteúdos que se repetem ficam em arrays de objetos.

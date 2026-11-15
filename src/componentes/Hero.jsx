@@ -6,7 +6,7 @@ import "./Hero.css";
 //   titulo     o h1 (pode ter JSX, como <br /> e <span className="hl">)
 //   texto      parágrafo abaixo do título
 //   textoLargo true deixa o parágrafo mais largo (opcional)
-//   foto       imagem importada de src/assets
+//   foto       imagem importada de src/imagem
 //   altFoto, larguraFoto, alturaFoto: atributos da imagem
 //   children   o que vem entre <Hero> e </Hero>: os botões de ação
 //   setaRolar  id da seção para onde a setinha "role para baixo" leva (opcional)

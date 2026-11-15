@@ -9,15 +9,15 @@ import Depoimento from "../componentes/Depoimento.jsx";
 import Faq from "../componentes/Faq.jsx";
 import Chamada from "../componentes/Chamada.jsx";
 
-import fotoHero from "../assets/img/hero-pkz.jpg";
-import fotoPkz1 from "../assets/img/pkz-1.jpg";
-import fotoPkz2 from "../assets/img/pkz-2.jpg";
-import fotoPkz3 from "../assets/img/pkz-3.jpg";
-import fotoPkz4 from "../assets/img/pkz-4.jpg";
-import fotoHenrique from "../assets/img/prof-henrique.jpg";
-import fotoRafael from "../assets/img/prof-rafael.jpg";
-import fotoEduardo from "../assets/img/prof-eduardo.jpg";
-import fogueteBranco from "../assets/img/rocket-white.svg";
+import fotoHero from "../imagem/hero-pkz.jpg";
+import fotoPkz1 from "../imagem/pkz-1.jpg";
+import fotoPkz2 from "../imagem/pkz-2.jpg";
+import fotoPkz3 from "../imagem/pkz-3.jpg";
+import fotoPkz4 from "../imagem/pkz-4.jpg";
+import fotoHenrique from "../imagem/prof-henrique.jpg";
+import fotoRafael from "../imagem/prof-rafael.jpg";
+import fotoEduardo from "../imagem/prof-eduardo.jpg";
+import fogueteBranco from "../imagem/rocket-white.svg";
 import "./Pkz.css";
 
 const FOTOS = [

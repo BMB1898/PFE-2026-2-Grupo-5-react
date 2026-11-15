@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import { criaLinkWhatsapp } from "../whatsapp.js";
-import setas from "../assets/img/chevrons.svg";
+import setas from "../imagem/chevrons.svg";
 import "./Planos.css";
 
 const PLANOS = [

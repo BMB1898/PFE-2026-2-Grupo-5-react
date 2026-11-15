@@ -3,7 +3,7 @@ import "./CardEquipe.css";
 // Card de uma pessoa da equipe: foto com legenda (figure + figcaption).
 // Props:
 //   nome, cargo, experiencia  textos do card
-//   foto                      imagem importada de src/assets
+//   foto                      imagem importada de src/imagem
 export default function CardEquipe({ nome, cargo, experiencia, foto }) {
   return (
     <figure className="team-card reveal">

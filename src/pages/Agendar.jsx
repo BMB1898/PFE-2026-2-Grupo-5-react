@@ -14,9 +14,9 @@ import {
   formataData,
   formataTelefone,
 } from "../agendamento.js";
-import setasAltas from "../assets/img/chevrons-tall.svg";
-import iconeOk from "../assets/img/check.svg";
-import iconeWhatsapp from "../assets/img/whatsapp.svg";
+import setasAltas from "../imagem/chevrons-tall.svg";
+import iconeOk from "../imagem/check.svg";
+import iconeWhatsapp from "../imagem/whatsapp.svg";
 import "./Agendar.css";
 
 // Textos que mudam de uma marca para a outra.

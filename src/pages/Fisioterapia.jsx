@@ -11,14 +11,14 @@ import Faq from "../componentes/Faq.jsx";
 import Chamada from "../componentes/Chamada.jsx";
 import { criaLinkWhatsapp } from "../whatsapp.js";
 
-import fotoHero from "../assets/img/hero-fisioterapia.jpg";
-import fotoFisio1 from "../assets/img/fisio-1.jpg";
-import fotoFisio2 from "../assets/img/fisio-2.jpg";
-import fotoFisio3 from "../assets/img/fisio-3.jpg";
-import fotoFisio4 from "../assets/img/fisio-4.jpg";
-import fotoCarla from "../assets/img/prof-carla.jpg";
-import fotoHenrique from "../assets/img/prof-henrique.jpg";
-import fotoEduardo from "../assets/img/prof-eduardo.jpg";
+import fotoHero from "../imagem/hero-fisioterapia.jpg";
+import fotoFisio1 from "../imagem/fisio-1.jpg";
+import fotoFisio2 from "../imagem/fisio-2.jpg";
+import fotoFisio3 from "../imagem/fisio-3.jpg";
+import fotoFisio4 from "../imagem/fisio-4.jpg";
+import fotoCarla from "../imagem/prof-carla.jpg";
+import fotoHenrique from "../imagem/prof-henrique.jpg";
+import fotoEduardo from "../imagem/prof-eduardo.jpg";
 
 // Link do WhatsApp com a mensagem pronta (usado em dois botões)
 const LINK_AVALIACAO = criaLinkWhatsapp(

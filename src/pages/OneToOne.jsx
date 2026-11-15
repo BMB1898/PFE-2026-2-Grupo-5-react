@@ -8,10 +8,10 @@ import Depoimento from "../componentes/Depoimento.jsx";
 import Faq from "../componentes/Faq.jsx";
 import Chamada from "../componentes/Chamada.jsx";
 
-import fotoHero from "../assets/img/hero-one-to-one.jpg";
-import fotoEduardo from "../assets/img/prof-eduardo.jpg";
-import fotoCarla from "../assets/img/prof-carla.jpg";
-import fotoRafael from "../assets/img/prof-rafael.jpg";
+import fotoHero from "../imagem/hero-one-to-one.jpg";
+import fotoEduardo from "../imagem/prof-eduardo.jpg";
+import fotoCarla from "../imagem/prof-carla.jpg";
+import fotoRafael from "../imagem/prof-rafael.jpg";
 
 const DIFERENCIAIS = [
   {
