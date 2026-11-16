@@ -1,20 +1,21 @@
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
-import useReveal from "./useReveal.js";
 import Header from "./componentes/Header.jsx";
 import Footer from "./componentes/Footer.jsx";
-import Planos from "./pages/Planos.jsx";
+import useReveal from "./useReveal.js";
+
 import Home from "./pages/Home.jsx";
+import OneToOne from "./pages/OneToOne.jsx";
+import Pkz from "./pages/Pkz.jsx";
+import Fisioterapia from "./pages/Fisioterapia.jsx";
+import Planos from "./pages/Planos.jsx";
+import Agendar from "./pages/Agendar.jsx";
 import NaoEncontrada from "./pages/NaoEncontrada.jsx";
 
 // O App é o "molde" de todas as páginas: o Header e o Footer aparecem
 // sempre, e o <Routes> troca só o miolo conforme o endereço (URL).
 // Antes, cada arquivo .html repetia o header e o footer inteiros.
-//
-// Cada parte do site acrescenta aqui:
-//   - o import da sua página (ou do Header e do Footer)
-//   - a sua <Route> dentro do <Routes>
 export default function App() {
   // useLocation diz em qual endereço o site está (ex.: "/planos")
   const { pathname } = useLocation();
@@ -31,10 +32,26 @@ export default function App() {
   return (
     <>
       <Header />
+      {/* Toda <Route> precisa ficar dentro do <Routes> */}
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/one-to-one" element={<OneToOne />} />
+        <Route path="/pkz" element={<Pkz />} />
+        <Route path="/fisioterapia" element={<Fisioterapia />} />
         <Route path="/planos" element={<Planos />} />
-        {/* path="*": qualquer endereço que não existe. */}
+        {/* As duas páginas de agendamento usam o MESMO componente.
+            A prop "marca" decide os textos, os horários e os campos.
+            A key diferente faz o React criar o formulário do zero
+            ao trocar de uma marca para a outra. */}
+        <Route
+          path="/agendar-one-to-one"
+          element={<Agendar key="One-to-One" marca="One-to-One" />}
+        />
+        <Route
+          path="/agendar-pkz"
+          element={<Agendar key="PKZ" marca="PKZ" />}
+        />
+        {/* path="*": qualquer endereço que não existe */}
         <Route path="*" element={<NaoEncontrada />} />
       </Routes>
       <Footer />

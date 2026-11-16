@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import logoPlaymakerz from "../assets/img/logo-playmakerz.png";
+import logoPlaymakerz from "../imagem/logo-playmakerz.png";
 import "./Footer.css";
 
 // O ano é calculado quando o site abre: o copyright não fica desatualizado.

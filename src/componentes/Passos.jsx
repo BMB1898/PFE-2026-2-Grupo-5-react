@@ -1,4 +1,4 @@
-import iconeFoguete from "../assets/img/rocket.svg";
+import iconeFoguete from "../imagem/rocket.svg";
 import "./Passos.css";
 
 // Passos numerados (lista ordenada): 01 Avaliação, 02 Plano...
